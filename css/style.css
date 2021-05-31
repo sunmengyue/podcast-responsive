@@ -13,7 +13,7 @@ body {
       rgba(17, 23, 37, 0.9)
     ),
     url(../mobile/image-host.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Chivo', sans-serif;
   overflow: hidden;
@@ -95,3 +95,7 @@ h1 {
   background: #54e6af;
   font-weight: bold;
 }
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+} ;
