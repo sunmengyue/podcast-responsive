@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;1,400&display=swap');
+
+* {
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(
+      rgba(17, 23, 37, 0.9),
+      rgba(17, 23, 37, 0.9)
+    ),
+    url(../mobile/image-host.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Chivo', sans-serif;
+  overflow: hidden;
+}
+
+p {
+  color: #fafafa;
+  opacity: 0.55;
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+
+  margin: 45px;
+}
+
+h1 {
+  color: #4da98b;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.content-container {
+  width: 440px;
+  padding: 60px 40px;
+}
+
+.content-container > .logo {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.main > h1 > span {
+  color: #fafafa;
+  opacity: 0.75;
+}
+
+.sponsor {
+  margin-bottom: 50px;
+}
+
+.sponsor > img {
+  margin-right: 20px;
+}
+
+.sponsor > img:nth-of-type(1) {
+  width: 65px;
+}
+.sponsor > img:nth-of-type(2) {
+  width: 65px;
+}
+.sponsor > img:nth-of-type(3) {
+  width: 125px;
+}
+.sponsor > img:nth-of-type(4) {
+  width: 90px;
+}
+
+.register-form > input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+}
+
+.register-form > input[type='email'] {
+  background: rgb(46, 58, 86, 0.9);
+}
+.register-form > input[type='email']::placeholder {
+  color: #fafafa;
+  opacity: 0.55;
+}
+
+.register-form > input[type='submit'] {
+  background: #54e6af;
+  font-weight: bold;
+}
