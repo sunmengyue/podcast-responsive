@@ -40,7 +40,7 @@ h1 {
 
 .content-container {
   width: 440px;
-  padding: 60px 40px;
+  padding: 14% 9%;
 }
 
 .content-container .logo {
@@ -71,16 +71,16 @@ h1 {
 }
 
 .sponsor > img:nth-of-type(1) {
-  width: 65px;
+  width: 4rem;
 }
 .sponsor > img:nth-of-type(2) {
-  width: 65px;
+  width: 4rem;
 }
 .sponsor > img:nth-of-type(3) {
-  width: 125px;
+  width: 7rem;
 }
 .sponsor > img:nth-of-type(4) {
-  width: 90px;
+  width: 5rem;
 }
 
 .register-form > input {
@@ -107,14 +107,21 @@ h1 {
   font-weight: bold;
 }
 
-/* Tablet */
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 510px) {
+  .content-container {
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   body {
     background: #111725;
   }
 
   .container {
     display: flex;
+    width: 100%;
+    height: 100%;
   }
 
   h1 {
@@ -128,19 +135,17 @@ h1 {
   }
 
   .content-container {
-    width: 35%;
-    position: relative;
-  }
-
-  .front-container {
-    position: absolute;
-    margin-top: 60px;
-    background-color: #111725;
-    z-index: 99;
-    width: 650px;
-    padding: 50px 20px;
+    margin: 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 35%;
+    position: relative;
+    padding: 40px;
+  }
+
+  .content-container > .logo {
+    text-align: left;
   }
 
   .tablet-img {
@@ -148,9 +153,27 @@ h1 {
     width: 65%;
   }
 
+  .tablet-img > img {
+    height: 100%;
+  }
+
+  .front-container {
+    display: flex;
+    flex-direction: column;
+    width: 180%;
+    background-color: #111725;
+    padding: 50px 40px 0 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .main > p {
+    width: 500px;
+  }
+
   .register-form {
     display: flex;
-    padding: 10px;
+    width: 500px;
   }
 
   .register-form > input[type='submit'] {
@@ -181,7 +204,7 @@ h1 {
   }
 }
 
-@media only screen and (min-width: 830px) {
+@media only screen and (min-width: 1015px) {
   body {
     text-align: center;
   }
