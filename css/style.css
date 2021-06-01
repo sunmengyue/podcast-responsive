@@ -52,6 +52,10 @@ h1 {
   display: none;
 }
 
+.desktop-img {
+  display: none;
+}
+
 .main > h1 > span {
   color: #fafafa;
   opacity: 0.75;
@@ -59,6 +63,7 @@ h1 {
 
 .sponsor {
   margin-bottom: 50px;
+  display: flex;
 }
 
 .sponsor > img {
@@ -105,8 +110,11 @@ h1 {
 /* Tablet */
 @media only screen and (min-width: 550px) {
   body {
-    display: flex;
     background: #111725;
+  }
+
+  .container {
+    display: flex;
   }
 
   h1 {
@@ -166,9 +174,84 @@ h1 {
     width: 90px;
   }
   .sponsor > img:nth-of-type(3) {
-    width: 170px;
+    width: 160px;
   }
   .sponsor > img:nth-of-type(4) {
     width: 150px;
+  }
+}
+
+@media only screen and (min-width: 830px) {
+  body {
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1750px;
+    margin-left: auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+  }
+
+  .content-container {
+    position: relative;
+    width: 570px;
+    border: 1px solid red;
+    padding: 0;
+  }
+
+  .content-container > .logo {
+    text-align: left;
+  }
+
+  .tablet-img {
+    display: none;
+  }
+
+  .desktop-img {
+    width: 1330px;
+    display: block;
+    position: relative;
+  }
+
+  .desktop-img > img:nth-of-type(1) {
+    width: 100%;
+  }
+
+  .desktop-img > img:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: -5%;
+  }
+
+  .front-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 170%;
+    height: 64%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid red;
+    padding: 100px 80px 30px 0;
+  }
+
+  .main > p {
+    font-size: 1.3rem;
+  }
+
+  .register-form {
+    padding: 0;
+    width: 60%;
+  }
+
+  .register-form > input {
+    padding: 20px;
+  }
+
+  .sponsor > img {
+    margin-right: 40px;
   }
 } ;
