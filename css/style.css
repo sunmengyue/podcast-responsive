@@ -292,4 +292,47 @@ h1 {
   .sponsor > img {
     margin-right: 70px;
   }
-} ;
+}
+
+/* dashboard */
+
+.dashboard__container {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 25px 0;
+  color: #fafafa;
+  font-size: larger;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.sidebar li {
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.sidebar li:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+/* dashboard */
+.dashboard__main {
+  height: 100vh;
+  flex: 1;
+  color: white;
+}
+
+.featured__container {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+}
