@@ -325,14 +325,98 @@ h1 {
 }
 
 /* dashboard */
+button {
+  width: 150px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  color: #2c3348;
+  background-color: #54e6af;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 .dashboard__main {
   height: 100vh;
   flex: 1;
   color: white;
+  padding: 40px;
 }
 
 .featured__container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 950px;
   margin-bottom: 40px;
+}
+
+.featured {
+  text-align: left;
+  display: flex;
+  background-color: rgba(138, 143, 192, 0.23);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.featured > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding: 40px;
+  line-height: 2;
+  font-size: 1.1em;
+}
+.featured > div > h4 {
+  opacity: 0.6;
+}
+
+.latest {
+  text-align: left;
+}
+
+/* latest */
+.latest h2 {
+  font-size: 2.2em;
+}
+
+.shows {
+  display: flex;
+  margin-top: 20px;
+}
+
+.show {
+  background-color: rgba(138, 143, 192, 0.23);
+  line-height: 2;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+
+.show:hover {
+  background-color: rgba(138, 143, 192, 0.53);
+  transition: background 0.4s ease;
+}
+
+.show:hover img {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.show > img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.show h5 {
+  opacity: 0.6;
 }
