@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/index.js" defer></script>
+   
   </head>
-  <body onload="fetch_all()">
+  <body>
     <div class="dashboard__container" style="padding: 0px">
       <div class="sidebar">
         <div class="logo" style="text-align: center">
@@ -20,13 +20,21 @@
           <li>Library</li>
         </ul>
       </div>
-      <div class="dashboard__main">
-        <div class="featured__container"></div>
-        <div class="latest">
-          <h2>Latest</h2>
-          <div class="shows"></div>
+      <div class="show__main">
+        <div class="header"></div>
+        
+        
+        <div class="episodes">
+          <h2>Episodes</h2>
+          <div class="episodes_content"></div>
         </div>
       </div>
     </div>
+    <script src="js/index.js"></script>
+    <script>
+      let id = location.search.replace('?id=', '');
+      getShow(id);
+      fetch_episodesInaShow(id);
+    </script>
   </body>
 </html>
