@@ -1,5 +1,5 @@
 let token =
-  'Bearer BQAhpjWB5ci7OB08xRwbb59sy_EZ7QjwU_LQuprvjKSxPRpyx2egY0U2nr5c51sTekG9I1lQigt17oz9jSR074qM6eDBTHAJv4B8uG10o-oB54q45ygw8ATzweg6Tx3n8mm3r-tnzYiK65UoO0ZBAh5IuR1ksnGBO8XkNM1uT_xZBca1B-Zd4HLQFK1BC_6RS76GmxgA_19qwVkpWybB_llYohAYI4m0uIJMJmRA1ewx6MZmT_Zl6h_lyvOYUH1NkFghG4m4cB1BRaV0kV8Ddz_ZeVJt-1X8HwQo7cg6';
+  'Bearer BQA1AXUgPsyLqYEsITsrB5_Ptk6A4xpDLDzVSEuarCFnFlKP2uWuzykaMmJ5EDiyIrlzxkJkEKQUBtCZnxd4-XhQhPIuo1AlBzPR9XceNyaYcpYFX74ijJm0yrA8ZwMP9ovCFruNErNeXrA6AwMMufbcMykWDjBGCSZtfF_A5flxAUlx1xXSwrCF8LLQhKJByHAwUgIiSdsPKlN5IKv43Jg3V6vBmOX7LUguIreVyVM5Bq0p0J6BL83DRaXn4AGHX09B_RwXNrs5zkV4HflZz3vm_okPXBtrv4MsCGjd';
 
 let show_url = 'https://api.spotify.com/v1/shows';
 let episodes_url = '	https://api.spotify.com/v1/episodes';
@@ -9,8 +9,8 @@ function fetch_featured() {
   fetch(show_url + '?ids=' + show_id + '&market=US', {
     method: 'GET',
     headers: {
-      "Authorization": token,
-      "Accept": 'application/json',
+      Authorization: token,
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   })
@@ -40,8 +40,8 @@ function fetch_latest() {
   fetch(show_url + '?ids=' + show_ids + '&market=US', {
     method: 'GET',
     headers: {
-      "Authorization": token,
-      "Accept": 'application/json',
+      Authorization: token,
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   })
@@ -67,72 +67,36 @@ function fetch_all() {
   fetch_latest();
 }
 
-function fetch_episodes() {
-  let episodes_ids =
-    '32YSeE6vqKDfsP6y34ooDI%2C6bDw9bcJkVJ46OZfICIsDF%2C654uNk00lsgyFT7dvt2UOO%2C4cdTFghnLPi0C7wg8oXXE3';
-  fetch(episodes_url + '?ids=' + episodes_ids + '&market=US', {
-    method: 'GET',
-    headers: {
-      "Authorization": token,
-      "Accept": ' application/json',
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      data.episodes.forEach((episode) => {
-        let episode_html = `
-          <div class="episode"> 
-              <img src="${episode.images[1].url}"/>
-            <div class="main_container">
-              <h3>${episode.name}</h3>
-              <h4>${episode.description}</h4>
-              <div>
-                <button>play</button>
-                <h5>${episode.release_date}</h5>
-              </div>
-            </div>
-          </div>
-        `;
-        document.querySelector('.episodes').innerHTML += episode_html;
-      });
-    });
-}
-
 function fetch_episodesInaShow(id) {
-
   let all_episodes_url = `https://api.spotify.com/v1/shows/${id}/episodes`;
   fetch(all_episodes_url + '?market=US&limit=10&offset=0', {
     method: 'GET',
     headers: {
-      "Authorization": token,
-      "Accept": 'application/json',
+      Authorization: token,
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   })
     .then((res) => res.json())
     .then((data) => {
-      data.items.forEach((item) => {
-        let item_html = `
-          <div class="episode"> 
-            <img src="${item.images[1].url}"/>
-            <div class="audio">
-              <div class="play_button">
-                <audio src="${item.audio_preview_url}" controls></audio>
-              </div>
-            <h3>preview</h3>
-          </div>
-          <div class="main_container">
-            <h3>${item.name}</h3>
-            <h4>${item.description}</h4>
-            <div>
-              <button>play</button>
-              <h5>${item.release_date}</h5>
+      data.items.forEach((episode) => {
+        let episode_html = `
+          <div class="episode">
+            <img src="${episode.images[1].url}">
+
+            <div class="episode__details">
+              <h2>${episode.name}</h2>
             </div>
+
+            <div class="audio">
+                <div class="play__button">
+                  <audio src="${episode.audio_preview_url}" controls></audio>
+                </div>
+                <h5>preview</h5>
+              </div>
           </div>
-        </div>
         `;
-        document.querySelector('.episodes_content').innerHTML += item_html;
+        document.querySelector('.episodes').innerHTML += episode_html;
       });
     });
 }
@@ -141,24 +105,23 @@ function getShow(id) {
   fetch(`https://api.spotify.com/v1/shows/${id}` + '?market=US', {
     method: 'GET',
     headers: {
-      "Authorization": token,
-      "Accept": 'application/json',
+      Authorization: token,
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   })
     .then((res) => res.json())
     .then((data) => {
+      document.title = 'pod - ' + data.name;
       let header_html = `
       <img src= '${data.images[1].url}'/>
-        <div class="header_detail">
+        <div>
             <h5>Podcast</h5>
             <h2>${data.name}</h2>
-            <h5>${data.publisher}</h5>
+            <h4>${data.publisher}</h4>
         </div>
       </div>
       `;
-      document.querySelector('.header').innerHTML = header_html;
+      document.querySelector('.detail__header').innerHTML = header_html;
     });
 }
-
-
