@@ -1,5 +1,5 @@
 let token =
-  'Bearer BQD0FFjK8EASkJyHXLfeCaUfryrAuECDeRa6SNyqHvZmeCIIGnBHnluUOpIm8CsrjVF_BBAOfLMg-d9NZUPLB9tjlP_D1WKLvCSwVhwvpGwCPKLs_lBZFFJqfdRZ8-kmiV95qlkybziMfvKFxBJAWbTT37Ko7Ff16KOwBUAnS59eLKgdXF6Wqnt2NI0R68H0n0GgUczxQzfiXcUJmVpl7-QdHrvUDcOhQD8NlaqTVqCqdvGUXJM7PxYZA9WwuSZ9wj7u8YNurqyFplYr8eXrs6aFs1mEfFgOAtHm4lKq';
+  'Bearer BQAIM1WZqbv-3SV2AAPFYsCpSskW4kGVz8tO_0SCOaoiCHb5eFOVZePw7aSFRQ417f2rCzIakgYRAz8tdxZAIMtUFE3qTn5klk86SkMwV1IvDBBONNUNigOp1PtQQh3KNNwXYQfbCUvcEeNo1qMOOLLGzlV67gAjDVpIK7bvEMHjhTJK8L3x5OWyfwFc4403kaXSUKy-5v9jJG0ra5vhMOpiMghZNoc2gBplCmUC_3Sq9u1_oedPkIndR46Qf2hJmc0IkxFJuI8APpJz2sfzsgtr3avNZZOJWG0sWFEs';
 
 let show_url = 'https://api.spotify.com/v1/shows';
 let episodes_url = '	https://api.spotify.com/v1/episodes';
@@ -92,7 +92,7 @@ function fetch_episodesInaShow(id) {
                 <div class="play__button">
                   <audio src="${episode.audio_preview_url}" controls></audio>
                 </div>
-                <h5>preview</h5>
+                <h4>preview</h4>
               </div>
           </div>
         `;

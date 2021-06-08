@@ -148,6 +148,7 @@ h1 {
     display: flex;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
   }
 
   h1 {
@@ -425,57 +426,19 @@ button:hover {
   opacity: 0.6;
 }
 
-/* Detail Page */
-.episodes {
-  display: flex;
-  flex-direction: column;
-}
-
-.episode {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-}
-
-.episode > img {
-  width: 130px;
-  border-radius: 10px;
-}
-
-.episode > .main_container {
-  margin-left: 20px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.main_container > h3 {
-  margin-bottom: 10px;
-}
-
-.main_container > h4 {
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.main_container > div {
-  display: flex;
-  align-items: center;
-}
-
-.main_container > div > h5 {
-  margin-left: 10px;
-}
-
 /* detailed page */
+.show__container {
+  display: flex;
+  overflow: hidden;
+}
 .show__main {
   width: 100%;
 }
 
-.header {
+.detail__header {
   width: 100%;
   display: flex;
+  align-items: flex-end;
   padding: 50px;
   background: linear-gradient(
     180deg,
@@ -484,19 +447,18 @@ button:hover {
   );
 }
 
-.header > img {
+.detail__header > img {
   border-radius: 20px;
 }
 
-.header_detail {
-  margin-left: 20px;
+.detail__header > div {
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  font-size: 1.2em;
+  line-height: 1.5;
+  padding: 20px;
 }
 
-.show__main > .audio {
+.audio {
   text-align: left;
   display: flex;
   align-items: center;
@@ -507,10 +469,15 @@ button:hover {
   padding: 10px;
   border-radius: 35px;
   justify-content: space-between;
-  transition: box-shadow 0.3s ease-in;
+  transition: box-shadow 0.2s ease-in;
 }
 
-.audio > h3 {
+.audio > .play__button {
+  width: 45px;
+  overflow: hidden;
+}
+
+.audio > h4 {
   flex: 1;
   text-align: center;
 }
@@ -520,6 +487,44 @@ button:hover {
   overflow: hidden;
 }
 
-.episodes {
-  margin-top: 20px;
+.episodes__container {
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.episodes__container > h2 {
+  padding: 20px;
+  text-align: left;
+}
+
+.episode {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 160px;
+  transition: background-color 0.2s ease;
+}
+
+.episode:hover {
+  background-color: #232946;
+  cursor: pointer;
+}
+
+.episode:hover img,
+.episode:hover .audio {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.episode > img {
+  width: 130px;
+  border-radius: 10px;
+}
+
+.episode > .episode__details {
+  padding: 20px;
+  max-width: 500px;
+  min-width: 500px;
+  text-align: left;
 }
