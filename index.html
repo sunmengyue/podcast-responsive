@@ -28,10 +28,10 @@
             <img src="desktop/google-podcasts.svg" alt="google-podcasts" />
             <img src="desktop/pocket-casts.svg" alt="pocket casts" />
           </div>
-          <form class="register-form" action="/dashboard.html">
+          <div class="register-form">
             <input type="email" placeholder="Email address" />
-            <input type="submit" value="Log in" />
-          </form>
+            <input type="submit" value="Log in" onclick="authWithGoogle()" />
+          </div>
         </div>
       </div>
       <div class="tablet-img">
@@ -42,5 +42,63 @@
         <img src="desktop/bg-pattern-dots.svg" alt="dots" />
       </div>
     </div>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: 'AIzaSyAi8gVF1mBamwduabeGPK1KaCX_utq8bio',
+        authDomain: 'podcas-54b78.firebaseapp.com',
+        projectId: 'podcas-54b78',
+        storageBucket: 'podcas-54b78.appspot.com',
+        messagingSenderId: '343806361754',
+        appId: '1:343806361754:web:fa6761e92db7f6bdf01f23',
+        measurementId: 'G-0YX34BGCB1',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      function authWithGoogle() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
+
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+
+            window.location.href = '/dashboard.html';
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+      }
+    </script>
   </body>
 </html>
