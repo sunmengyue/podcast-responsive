@@ -1,5 +1,5 @@
 let token =
-  'Bearer BQBle6eOrI9y3_H9KJHyS3egx3NkJXfoVN0mYKOyPQTyfcmFIHqMrYxFc-5i1IKw5xteJrEP1pmowQbdayqq4gmZbHcK5RLhGNdJsi36iYy-KgjS4TOa9eZiJj9s53FFYTN9piuA-YoFuXbGpTEUiUuHOJUjv2bV9I8USL_EiYhLgUSyKHPu08aI1itHoNk_4m0DQTV0EUDXzqo_9uM_iDm3L92ULiV0xuoThXLLc8DSXj7Juzmsj3ojWfArcEI268olD-K3USbrmD_2LrSCCdWA1I_7tLyK0_0Iq0hp';
+  'Bearer BQBh--_H_EJQQKj9G9rpREgunq48sOrVrnvRc9HEcqcvpAHaVM-rICtrTUSOmgLnE-fs36wxx1vooifKZoNiLAoFbYT2LXuJb7tB2ichocjnWRLrB5Lr-3G5r6tCMELEiWQGY0VbArQPfJ6vbQsIbIFSPvEUB5B9dpqEXY4qeLQXZjyNonJpEDdKQB9Ms9QIf43YwkfqwCO8ScfG3Jm5tpWGPFoLSydVofc1gNSgUMC4LUoUxoQPXviSDXXSHtCKpFCTNnM-gCBrXHqJX-FCV-pQXXfeXKVlbbRnVeXG';
 
 let show_url = 'https://api.spotify.com/v1/shows';
 let episodes_url = '	https://api.spotify.com/v1/episodes';
@@ -122,6 +122,12 @@ function getShow(id) {
         </div>
       </div>
       `;
+
+      let sticky_content_html = `
+        <h3>${data.name}</h3>
+      `;
+
       document.querySelector('.detail__header').innerHTML = header_html;
+      document.querySelector('.sticky__header').innerHTML = sticky_content_html;
     });
 }

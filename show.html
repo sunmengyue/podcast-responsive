@@ -22,6 +22,7 @@
 
       <div class="show__main">
         <div class="detail__header"></div>
+        <div class="sticky__header"></div>
         <div class="episodes__container">
           <h2>Episodes</h2>
           <div class="episodes"></div>
@@ -34,6 +35,20 @@
       let id = location.search.replace('?id=', '');
       getShow(id);
       fetch_episodesInaShow(id);
+
+      let detailHeader = document.querySelector('.detail__header');
+      let showMain = document.querySelector('.show__main');
+      let stickyHeader = document.querySelector('.sticky__header');
+
+      showMain.addEventListener('scroll', () => {
+        let headerHight = detailHeader.offsetHeight;
+        let scrollableHeight = showMain.scrollTop;
+        if (scrollableHeight >= headerHight) {
+          stickyHeader.classList.add('fade__in');
+        } else {
+          stickyHeader.classList.remove('fade__in');
+        }
+      });
     </script>
   </body>
 </html>

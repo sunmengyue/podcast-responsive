@@ -430,7 +430,7 @@ button:hover {
 .show__container {
   height: 100%;
   display: flex;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .show__main {
   height: 100%;
@@ -439,6 +439,25 @@ button:hover {
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.sticky__header {
+  display: none;
+  background-color: #14396e;
+  height: 200px;
+  text-align: left;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: display 1s ease-in;
+}
+
+.fade__in {
+  display: block;
+  transition: display 1s ease-in;
 }
 
 .detail__header {
