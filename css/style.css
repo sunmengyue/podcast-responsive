@@ -442,7 +442,7 @@ button:hover {
 }
 
 .sticky__header {
-  display: none;
+  opacity: 0;
   background-color: #14396e;
   height: 200px;
   text-align: left;
@@ -452,12 +452,13 @@ button:hover {
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: display 1s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .fade__in {
-  display: block;
-  transition: display 1s ease-in;
+  opacity: 1;
+
+  transition: all 0.3s ease-in;
 }
 
 .detail__header {
