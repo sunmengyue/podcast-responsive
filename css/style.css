@@ -69,23 +69,19 @@ h1 {
   margin-right: 20px;
 }
 
+.register-form {
+  display: flex;
+  justify-content: center;
+}
+
 .register-form > input {
   display: block;
-  width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 15px;
   font-size: 1rem;
   border: none;
   border-radius: 30px;
-}
-
-.register-form > input[type='email'] {
-  background: rgb(46, 58, 86, 0.9);
-}
-.register-form > input[type='email']::placeholder {
-  color: #fafafa;
-  opacity: 0.55;
 }
 
 .register-form > input[type='submit'] {
@@ -121,15 +117,9 @@ h1 {
     width: 60px;
   }
 
-  .register-form {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-  }
-
   .register-form > input {
     padding: 12px;
+    width: 100%;
   }
 }
 
@@ -199,23 +189,14 @@ h1 {
   }
 
   .register-form {
-    display: flex;
-    width: 500px;
-    background-color: rgb(46, 58, 86, 0.9);
-    border-radius: 40px;
-    padding: 5px;
-    margin-bottom: 50px;
+    justify-content: center;
   }
 
   .register-form > input {
-    padding: 0;
+    padding: 15px 20px;
     margin: 0;
   }
 
-  .register-form > input[type='email'] {
-    background: transparent;
-    padding-left: 20px;
-  }
   .register-form > input[type='submit'] {
     padding: 12px;
     width: 160px;

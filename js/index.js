@@ -1,5 +1,5 @@
 let token =
-  'Bearer BQBh--_H_EJQQKj9G9rpREgunq48sOrVrnvRc9HEcqcvpAHaVM-rICtrTUSOmgLnE-fs36wxx1vooifKZoNiLAoFbYT2LXuJb7tB2ichocjnWRLrB5Lr-3G5r6tCMELEiWQGY0VbArQPfJ6vbQsIbIFSPvEUB5B9dpqEXY4qeLQXZjyNonJpEDdKQB9Ms9QIf43YwkfqwCO8ScfG3Jm5tpWGPFoLSydVofc1gNSgUMC4LUoUxoQPXviSDXXSHtCKpFCTNnM-gCBrXHqJX-FCV-pQXXfeXKVlbbRnVeXG';
+  'Bearer BQBOCp3BDmzcQB6GeKQ6anaMWh3gAn_s8v6Qp2TrmByN-i656vBA20JejtFGqchBdnvat8f0f06TN4TJA4Wdn5xKuzjODcgDVY_YK_oUY51XOENi8MtZjSW0WdA1ezbSoos4lelIyScNiaOqzENNhNzqvmtiV_pV0gdHh5nj3Oor_AykNbsVSxsXj5lriI9-7njQaHH0rjqQ5iCb5Qt2TtGX6hu9Plq4Oh_RQiHhoXmgcym7jrZxSHjxrCnbNVjLC3ukqnpTsaOLjPWzgtSvGjiA3flzu7Gl7aFod3Aw';
 
 let show_url = 'https://api.spotify.com/v1/shows';
 let episodes_url = '	https://api.spotify.com/v1/episodes';
